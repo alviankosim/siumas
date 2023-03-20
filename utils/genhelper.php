@@ -1,7 +1,4 @@
 <?php
-// if (session_status() === PHP_SESSION_NONE) {
-//     session_start();
-// }
 /**
  * genhelper.php
  * author: @alviankosim
@@ -18,6 +15,13 @@ if (!function_exists('my_sess')) {
     }
 }
 
+if (!function_exists('set_sess')) {
+    function set_sess($data)
+    {
+        $_SESSION['user_data'] = $data;
+    }
+}
+
 if (!function_exists('base_url')) {
     /**
      * Function untuk mendapatkan base url dari website
@@ -28,7 +32,7 @@ if (!function_exists('base_url')) {
     function base_url($extra = "", $is_assets = false)
     {
         $protocol = stripos($_SERVER['SERVER_PROTOCOL'], 'https') === 0 ? 'https://' : 'http://';
-        $host  = $_SERVER['HTTP_HOST'] . '/' . APP_FOLDER . ($is_assets ? ('/' . 'assets/core/dist/') : '');
+        $host  = $_SERVER['HTTP_HOST'] . '/' . APP_FOLDER . ($is_assets ? ('/' . 'assets/core/dist') : '');
         return "$protocol$host/$extra";
     }
 }
@@ -58,20 +62,23 @@ if (!function_exists('censor_name')) {
     }
 }
 
-if (!function_exists('checklogin')) {
+if (!function_exists('check_login')) {
     /**
      * Function untuk cek login
      * @author alviankosim
      */
-    function checklogin()
+    function check_login()
     {
-        if (my_sess('username')) {
+        if (my_sess('user_name')) {
             //kali aja dibutuhin nanti
-        } else {
-            header("HTTP/1.1 401 Unauthorized");
-            echo "Not authorized";
-            exit();
+            return true;
         }
+        return false;
+        // else {
+        //     // header("HTTP/1.1 401 Unauthorized");
+        //     // echo '<head><title>401 Unauthorized</title><link rel="icon" type="image/png" sizes="192x192" href="/asd.png"></head><div style="width: 100%;height: 100%;display: flex; justify-content: center;align-items: center;color: #333;font-family:\'Segoe UI\', Tahoma, Geneva, Verdana, sans-serif">401 | Unauthorized</div>';
+        //     // exit();
+        // }
     }
 }
 
@@ -89,5 +96,16 @@ if (!function_exists('checkIsAdmin')) {
             echo "Not authorized";
             exit();
         }
+    }
+}
+
+if (!function_exists('format_rupiah')) {
+    /**
+     * Function untuk cek login apakah dia admin
+     * @author alviankosim
+     */
+    function format_rupiah($number)
+    {
+        return 'Rp ' . number_format(($number), 0, ',', '.');
     }
 }

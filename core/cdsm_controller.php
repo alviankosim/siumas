@@ -4,8 +4,8 @@
  * author: @alviankosim
  */
 
- include_once $_SERVER['DOCUMENT_ROOT'] . '/' . APP_FOLDER . '/' . 'core/db.php';
- include_once $_SERVER['DOCUMENT_ROOT'] . '/' . APP_FOLDER . '/' . 'core/validator.php';
+ include_once APP_PATH . 'core/db.php';
+ include_once APP_PATH . 'core/validator.php';
 
 class Cdsm_controller
 {
@@ -33,7 +33,7 @@ class Cdsm_controller
 
     protected function load_view($_file_path, $variables = array(), $print = true)
     {
-        $file_path = $_SERVER['DOCUMENT_ROOT'] . '/' . APP_FOLDER . '/' .  self::VIEW_LOCATION . $_file_path . '.php';
+        $file_path = APP_PATH .  self::VIEW_LOCATION . $_file_path . '.php';
 
         $output = NULL;
         if(file_exists($file_path)){

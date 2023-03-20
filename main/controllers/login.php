@@ -2,6 +2,8 @@
 
 class Login extends Cdsm_controller
 {
+    const ROLE_ID_ADMIN = 11;
+    const ROLE_ID_PENAGIH = 22;
     
     public function __construct()
     {
@@ -10,11 +12,17 @@ class Login extends Cdsm_controller
 
     public function index()
     {
+        if (check_login()) {
+            redirect('iuran');
+        }
         $this->load_view('login');
     }
 
     public function login_action()
     {
+        if (check_login()) {
+            redirect('iuran');
+        }
         $datas = [
             'username' => daPost('username'),
             'password' => daPost('password'),
@@ -27,7 +35,7 @@ class Login extends Cdsm_controller
             redirect('login');
         }
 
-        $query = $this->db->query('select * from users where user_name = ? limit 1', [$datas['username']]);
+        $query = $this->db->query('select * from m_users where user_name = ? limit 1', [$datas['username']]);
         $row = $query->row();
         if (!$row) {
             set_message('error', 'Mohon cek username atau password');
@@ -39,7 +47,16 @@ class Login extends Cdsm_controller
             redirect('login');
         }
 
-        echo 'bengnar';
+        // setting up session
+        $session = [
+            'user_name'     => $row->user_name,
+            'user_id'       => $row->user_id,
+            'user_fullname' => $row->user_fullname,
+            'role_id' => $row->role_id,
+        ];
+        set_sess($session);
+
+        redirect('iuran');
     }
 
     private function _validate($datas)
@@ -52,6 +69,12 @@ class Login extends Cdsm_controller
         ]);
 
         return $this->validator->validate();
+    }
+
+    public function logout_action()
+    {
+        session_destroy();
+        redirect('');
     }
     
 }
