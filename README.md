@@ -12,6 +12,10 @@ https://app.codeseem.com/siumas (not yet available)
 - **Start your Apache + PHP 7.4+ Web Server and MySQL5.5/MariaDB 10.3+ Database Server**
 - **Execute the ddl file (ddl/create.sql) to your database**
 - Access the application via http://localhost/siumas
+
+Demo Account (admin)
+
+**admin:kosim123**
 ## Screenshot
 ![Siumas Screenshot](./docs/ss/siumas_1.png)
 
