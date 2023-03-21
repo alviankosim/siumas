@@ -13,7 +13,7 @@ https://app.codeseem.com/siumas (not yet available)
 - **Execute the ddl file (ddl/create.sql) to your database**
 - Access the application via http://localhost/siumas
 
-Demo Account (admin)
+### Demo Account (admin)
 
 **admin:kosim123**
 ## Screenshot
