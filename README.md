@@ -18,6 +18,6 @@ https://app.codeseem.com/siumas (not yet available)
 
 
 ## Specification
-- HTML, CSS (+FontAwesome), JS
-- Native PHP OOP (custom View-Controller pattern)
+- CoreUI + Bootstrap 4 + jQuery 3
+- Native PHP OOP (custom View-Controller pattern framework)
 - Color Palette from https://colorhunt.co/palette/06283d1363df47b5ffdff6ff
