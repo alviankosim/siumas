@@ -5,6 +5,14 @@ a simple collector's app written in PHP Native
 You can see the demo version on
 https://app.codeseem.com/siumas (not yet available)
 
+## Installation (local development)
+
+**Clone or simply download as zip this repo**
+`git clone https://github.com/alviankosim/siumas`
+
+**Start your Apache + PHP 7.4+ Web Server and MySQL5.5/MariaDB 10.3+ Database Server**
+**Execute the ddl file (ddl/create.sql) to your database**
+Access the application via http://localhost/siumas
 ## Screenshot
 ![Siumas Screenshot](./docs/ss/siumas_1.png)
 
