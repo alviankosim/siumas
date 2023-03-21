@@ -92,9 +92,7 @@ if (!function_exists('checkIsAdmin')) {
         if (my_sess('is_admin')) {
             //kali aja dibutuhin nanti
         } else {
-            header("HTTP/1.1 401 Unauthorized");
-            echo "Not authorized";
-            exit();
+            show_error('401 Unauthorized');
         }
     }
 }
@@ -107,5 +105,23 @@ if (!function_exists('format_rupiah')) {
     function format_rupiah($number)
     {
         return 'Rp ' . number_format(($number), 0, ',', '.');
+    }
+}
+
+if (!function_exists('show_error')) {
+    /**
+     * Function untuk cek login apakah dia admin
+     * @author alviankosim
+     */
+    function show_error($error_text)
+    {
+        $error_textt = '';
+        $pos = strpos($error_text, ' ');
+        if ($pos !== false) {
+            $error_textt = substr_replace($error_text, ' | ', $pos, strlen(' '));
+        }
+        header("HTTP/1.1 ". $error_text ."");
+        echo '<head><title>'. $error_text .'</title><link rel="icon" type="image/png" sizes="192x192" href="/asd.png"></head><div style="width: 100%;height: 100%;display: flex; justify-content: center;align-items: center;color: #333;font-family:\'Segoe UI\', Tahoma, Geneva, Verdana, sans-serif">'. $error_textt .'</div>';
+        exit;
     }
 }

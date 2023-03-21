@@ -74,9 +74,7 @@ if (count($arr_links) > 0) {
   // exit;
 
   if (!$_current_routes && !$_current_routes) {
-    header("HTTP/1.1 404 Not Found");
-    echo '<head><title>404 Page Not Found</title><link rel="icon" type="image/png" sizes="192x192" href="/asd.png"></head><div style="width: 100%;height: 100%;display: flex; justify-content: center;align-items: center;color: #333;font-family:\'Segoe UI\', Tahoma, Geneva, Verdana, sans-serif">404 | Not Found</div>';
-    exit;
+    show_error('404 Not Found');
   }
 } else {
   $exploded_default_route = explode('.', $_default_route);

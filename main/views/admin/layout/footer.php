@@ -6,38 +6,48 @@
 </footer>
 </div>
 <script>
+    function vexConfirm(title, cb)
+    {
+        vex.dialog.confirm({
+            message: title,
+            callback: cb
+        })
+    }
+    function vexAlert(title)
+    {
+        vex.dialog.alert(title);
+    }
+    function number_format(number, decimals, dec_point, thousands_sep) {
+        // Strip all characters but numerical ones.
+        number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+        var n = !isFinite(+number) ? 0 : +number,
+            prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+            sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+            dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+            s = '',
+            toFixedFix = function(n, prec) {
+                var k = Math.pow(10, prec);
+                return '' + Math.round(n * k) / k;
+            };
+        // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+        s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+        if (s[0].length > 3) {
+            s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+        }
+        if ((s[1] || '').length < prec) {
+            s[1] = s[1] || '';
+            s[1] += new Array(prec - s[1].length + 1).join('0');
+        }
+        return s.join(dec);
+    }
+    function format_rupiah($number){
+        return 'Rp ' + number_format(($number), 0, ',', '.');
+    }
     $(document).ready(function() {
-        $('.select2').select2({
+        $('.select2sheesh').select2({
             theme: 'bootstrap4'
         });
-        $('.select2remote').each(function() {
-            const that = $(this);
-            that.select2({
-                theme: 'bootstrap4',
-                delay: 250,
-                placeholder: that.data('select2placeholder'),
-                ajax: {
-                    url: that.data('select2url'),
-                    dataType: 'json',
-                    data: function (params) {
-                        var query = {
-                            ...params,
-                            ...that.data('addparam')
-                        }
 
-                        // Query parameters will be ?search=[term]&type=public
-                        return query;
-                    },
-                    processResults: function(data) {
-                        // Transforms the top-level key of the response object from 'items' to 'results'
-                        return {
-                            results: data.results
-                        };
-                    }
-                },
-                minimumInputLength: 3
-            })
-        });
     });
 </script>
 

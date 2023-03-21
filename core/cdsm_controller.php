@@ -55,4 +55,11 @@ class Cdsm_controller
         return $output;
     
     }
+
+    protected function send_json($data)
+    {
+        header('Content-Type: application/json');
+        echo json_encode($data);
+        exit;
+    }
 }

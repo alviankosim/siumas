@@ -1,10 +1,7 @@
 <?php
 
 class Login extends Cdsm_controller
-{
-    const ROLE_ID_ADMIN = 11;
-    const ROLE_ID_PENAGIH = 22;
-    
+{   
     public function __construct()
     {
         parent::__construct();
@@ -46,6 +43,11 @@ class Login extends Cdsm_controller
             set_message('error', 'Mohon cek username atau password');
             redirect('login');
         }
+
+        // updating the last login
+        $updating = $this->db->query('
+            update m_users set last_login = NOW() where user_id = ?
+        ', [$row->user_id], true);
 
         // setting up session
         $session = [

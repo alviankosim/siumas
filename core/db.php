@@ -27,7 +27,7 @@ class DB
         return $this;
     }
 
-    public function query($query_string, $binding_params = [])
+    public function query($query_string, $binding_params = [], $return_stmt = false)
     {
         $this->active_query = null;
         $statement = $this->mysql->prepare($query_string);
@@ -38,8 +38,11 @@ class DB
             }
             $statement->bind_param($data_types, ...$binding_params);
         }
-        $statement->execute();
+        $hehe = $statement->execute();
         $this->active_query = $statement->get_result();
+        if ($return_stmt) {
+            return $hehe;
+        }
         return $this;
     }
 
