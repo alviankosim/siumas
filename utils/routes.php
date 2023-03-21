@@ -19,8 +19,14 @@ $_routes = [
     '/iuran/pay_action'    => 'iuran.pay_action',
     '/iuran/unpay_action'  => 'iuran.unpay_action',
 
-    '/keluarga/ajax'         => 'keluarga.ajax',
-    '/keluarga/ajax_periode' => 'keluarga.ajax_periode',
+    '/keluarga'               => 'keluarga.index',
+    '/keluarga/add'           => 'keluarga.add',
+    '/keluarga/add_action'    => 'keluarga.add_action',
+    '/keluarga/edit'          => 'keluarga.edit',
+    '/keluarga/edit_action'   => 'keluarga.edit_action',
+    '/keluarga/delete_action' => 'keluarga.delete_action',
+    '/keluarga/ajax'          => 'keluarga.ajax',
+    '/keluarga/ajax_periode'  => 'keluarga.ajax_periode',
 
     '/users'               => 'users.index',
     '/users/add'           => 'users.add',

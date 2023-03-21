@@ -107,8 +107,8 @@
                         <use xlink:href="<?= base_url('', true) ?>vendors/@coreui/icons/svg/free.svg#cil-people"></use>
                     </svg> Keluarga</a>
                 <ul class="nav-group-items">
-                    <li class="nav-item"><a class="nav-link" href="buttons/buttons.html"><span class="nav-icon"></span> List Keluarga</a></li>
-                    <li class="nav-item"><a class="nav-link" href="buttons/dropdowns.html"><span class="nav-icon"></span> Tambah Keluarga</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('keluarga') ?>"><span class="nav-icon"></span> List Keluarga</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('keluarga/add') ?>"><span class="nav-icon"></span> Tambah Keluarga</a></li>
                 </ul>
             </li>
             <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
