@@ -8,6 +8,7 @@ class DB
     private $mysql;
     private $active_query;
     private $curr_result;
+    private $insert_id;
 
     function __construct()
     {
@@ -39,7 +40,10 @@ class DB
             $statement->bind_param($data_types, ...$binding_params);
         }
         $hehe = $statement->execute();
+
         $this->active_query = $statement->get_result();
+        $this->insert_id = $statement->insert_id;
+
         if ($return_stmt) {
             return $hehe;
         }
@@ -72,5 +76,10 @@ class DB
         }
 
         return count($this->curr_result) > 0 ? ((object) $this->curr_result[0]) : NULL;
+    }
+
+    public function insert_id()
+    {
+        return $this->insert_id;
     }
 }

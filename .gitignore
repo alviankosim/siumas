@@ -1,1 +1,5 @@
 .DS_Store
+
+public/uploads/pengeluaran/*
+!public/uploads/pengeluaran/index.html
+siumas.zip

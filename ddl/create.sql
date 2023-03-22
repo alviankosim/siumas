@@ -15,9 +15,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE DATABASE siumas;
-use siumas;
-
 --
 -- Table structure for table `m_keluarga`
 --
@@ -34,7 +31,7 @@ CREATE TABLE `m_keluarga` (
   `type` int(2) DEFAULT NULL,
   `status` int(2) DEFAULT NULL,
   PRIMARY KEY (`keluarga_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +69,7 @@ CREATE TABLE `m_users` (
 
 LOCK TABLES `m_users` WRITE;
 /*!40000 ALTER TABLE `m_users` DISABLE KEYS */;
-INSERT INTO `m_users` VALUES (-1,'admin','$2y$10$V4mwUxNRUsgh9THrLTUAWelaV25xRSIlVE//kvLi/lipuKKHwgZ06',11,'2023-03-21 08:15:44','123123123','Admin'),(2,'febrianto','$2y$10$Rs4lYy1cU5ZtREymToz2KuzJJEpe8YCD4PEe3NntYMV6srOZrkMN2',22,'2023-03-21 08:50:06','121248721091248219489018240912','Febriantos');
+INSERT INTO `m_users` VALUES (-1,'admin','$2y$10$V4mwUxNRUsgh9THrLTUAWelaV25xRSIlVE//kvLi/lipuKKHwgZ06',11,'2023-03-22 09:11:51','123123123','Admin'),(2,'febrianto','$2y$10$Rs4lYy1cU5ZtREymToz2KuzJJEpe8YCD4PEe3NntYMV6srOZrkMN2',22,'2023-03-21 08:50:06','121248721091248219489018240912','Febriantos');
 /*!40000 ALTER TABLE `m_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,7 +85,7 @@ CREATE TABLE `pengeluaran_images` (
   `pengeluaran_id` int(32) DEFAULT NULL,
   `path` varchar(100) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
   PRIMARY KEY (`pengeluaran_image_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,6 +94,7 @@ CREATE TABLE `pengeluaran_images` (
 
 LOCK TABLES `pengeluaran_images` WRITE;
 /*!40000 ALTER TABLE `pengeluaran_images` DISABLE KEYS */;
+INSERT INTO `pengeluaran_images` VALUES (5,10,'69fa5f19de13d7c1a6bfb3280928326a.jpeg'),(6,0,'c4cda0c98ac052b717f3f314f01c3e12.webp'),(11,9,'2bd1dd3abc529a7f10aaf09fde728644.webp'),(12,11,'39995fca41ae41f8c44e606756f3ab3d.jpeg'),(14,12,'7a0cb6a864822bcdef420c3b042a2652.jpeg');
 /*!40000 ALTER TABLE `pengeluaran_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,8 +142,9 @@ CREATE TABLE `t_pengeluaran` (
   `pengeluaran_date` datetime DEFAULT NULL,
   `created_date` datetime DEFAULT current_timestamp(),
   `amount` int(32) DEFAULT NULL,
+  `status` int(2) DEFAULT NULL,
   PRIMARY KEY (`pengeluaran_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,6 +153,7 @@ CREATE TABLE `t_pengeluaran` (
 
 LOCK TABLES `t_pengeluaran` WRITE;
 /*!40000 ALTER TABLE `t_pengeluaran` DISABLE KEYS */;
+INSERT INTO `t_pengeluaran` VALUES (9,'Pembuatan Masjid','Hehehehhe jajaajjaja','2023-03-22 00:00:00','2023-03-22 06:17:40',20000,33),(10,'Pembangunan Masjid','Masajidallah','2023-03-22 00:00:00','2023-03-22 06:18:49',100000,33),(11,'Menyambut bulan suci ramadhan','Menyambut bulan suci Ramadhan','2023-03-22 00:00:00','2023-03-22 09:15:44',10000,33),(12,'Mana Saja','Mana Saja Hehe','2023-03-22 00:00:00','2023-03-22 09:18:47',10000,11);
 /*!40000 ALTER TABLE `t_pengeluaran` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -170,4 +170,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-21  8:51:49
+-- Dump completed on 2023-03-22  9:20:46

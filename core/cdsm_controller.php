@@ -6,11 +6,13 @@
 
  include_once APP_PATH . 'core/db.php';
  include_once APP_PATH . 'core/validator.php';
+ include_once APP_PATH . 'core/uploader.php';
 
 class Cdsm_controller
 {
     protected $db;
     protected $validator;
+    protected $uploader;
 
     const CONTROLLERS_LOCATION = 'main/controllers/';
     const VIEW_LOCATION = 'main/views/';
@@ -29,6 +31,10 @@ class Cdsm_controller
         // binding validator
         $validator = new Validator();
         $this->validator = $validator;
+
+        // binding uploader
+        $uploader = new Uploader();
+        $this->uploader = $uploader;
     }
 
     protected function load_view($_file_path, $variables = array(), $print = true)

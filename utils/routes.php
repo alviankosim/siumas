@@ -34,4 +34,14 @@ $_routes = [
     '/users/edit'          => 'users.edit',
     '/users/edit_action'   => 'users.edit_action',
     '/users/delete_action' => 'users.delete_action',
+
+    '/pengeluaran'                          => 'pengeluaran.index',
+    '/pengeluaran/add'                      => 'pengeluaran.add',
+    '/pengeluaran/add_action'               => 'pengeluaran.add_action',
+    '/pengeluaran/edit'                     => 'pengeluaran.edit',
+    '/pengeluaran/edit_action'              => 'pengeluaran.edit_action',
+    '/pengeluaran/delete_action'            => 'pengeluaran.delete_action',
+    '/pengeluaran/process_action'           => 'pengeluaran.process_action',
+    '/pengeluaran/done_action'              => 'pengeluaran.done_action',
+    '/pengeluaran/ajax_delete_image_action' => 'pengeluaran.ajax_delete_image_action',
 ];

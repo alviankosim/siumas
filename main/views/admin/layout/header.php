@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="<?= base_url('', true) ?>vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
     <script src="<?= base_url('', true) ?>vendors/simplebar/js/simplebar.min.js"></script>
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/cf90720bb5.js" crossorigin="anonymous"></script>
     <!-- tempusdominus 4 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="<?= base_url('', true) ?>vendors/tempusdominus/js/bootstrap-datetimepicker.min.js"></script>
@@ -45,6 +47,9 @@
     <script>vex.defaultOptions.className = 'vex-theme-os'</script>
     <link rel="stylesheet" href="<?= base_url('', true) ?>vendors/vex/css/vex.css" />
     <link rel="stylesheet" href="<?= base_url('', true) ?>vendors/vex/css/vex-theme-os.css" />
+    <!-- imageuploader -->
+    <script src="<?= base_url('', true) ?>vendors/imageuploader/imageuploader.min.js"></script>
+    <link rel="stylesheet" href="<?= base_url('', true) ?>vendors/imageuploader/imageuploader.min.css" />
 </head>
 
 <body>
@@ -97,8 +102,8 @@
                         <use xlink:href="<?= base_url('', true) ?>vendors/@coreui/icons/svg/free.svg#cil-list"></use>
                     </svg> Pengeluaran</a>
                 <ul class="nav-group-items">
-                    <li class="nav-item"><a class="nav-link" href="buttons/buttons.html"><span class="nav-icon"></span> List Pengeluaran</a></li>
-                    <li class="nav-item"><a class="nav-link" href="buttons/dropdowns.html"><span class="nav-icon"></span> Tambah Pengeluaran</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('pengeluaran') ?>"><span class="nav-icon"></span> List Pengeluaran</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url('pengeluaran/add') ?>"><span class="nav-icon"></span> Tambah Pengeluaran</a></li>
                 </ul>
             </li>
             <li class="nav-title">Master</li>
