@@ -86,13 +86,15 @@
                         <use xlink:href="<?= base_url('', true) ?>vendors/@coreui/icons/svg/free.svg#cil-money"></use>
                     </svg> Iuran 
                     <? if($need_to_pay > 0): ?>
-                        <span class="badge badge-sm bg-success ms-auto">Pay</span></a>
+                        <span class="badge badge-sm bg-success ms-auto">Pay</span>
                     <?endif?>
+                    </a>
                 <ul class="nav-group-items">
                     <li class="nav-item"><a class="nav-link" href="<?= base_url('iuran') ?>"><span class="nav-icon"></span> List Iuran 
                     <? if($need_to_pay > 0): ?>
-                        <span class="badge badge-sm bg-success ms-auto"><?= $need_to_pay ?></span></a>
+                        <span class="badge badge-sm bg-success ms-auto"><?= $need_to_pay ?></span>
                     <?endif?>
+                    </a>
                 </li>
                     <li class="nav-item"><a class="nav-link" href="<?= base_url('iuran/add') ?>"><span class="nav-icon"></span> Tambah Iuran</a></li>
                 </ul>
