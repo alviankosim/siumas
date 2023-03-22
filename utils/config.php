@@ -7,4 +7,4 @@ define('DB_PASS', '');
 
 define('APP_FOLDER', 'siumas');
 define('APP_NAME', 'SIUMAS');
-define('APP_VERSION', 'v0.0.9');
+define('APP_VERSION', 'v1.0.0');
