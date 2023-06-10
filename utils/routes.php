@@ -9,6 +9,11 @@ $_routes = [
     '/login_action'  => 'login.login_action',
     '/logout_action' => 'login.logout_action',
 
+    // navigation
+    '/tentang' => 'dashboard.tentang',
+    '/syarat-ketentuan' => 'dashboard.snk',
+    '/faq' => 'dashboard.faq',
+
     // authenticated user menu
     '/iuran'               => 'iuran.index',
     '/iuran/add'           => 'iuran.add',
