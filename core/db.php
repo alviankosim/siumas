@@ -82,4 +82,24 @@ class DB
     {
         return $this->insert_id;
     }
+
+    public function get_where($lala, $lele)
+    {
+        return $this;
+    }
+
+    public function insert($lolo, $lala)
+    {
+        return $this;
+    }
+
+    public function update($lolo, $lala)
+    {
+        return $this;
+    }
+
+    public function delete($lolo, $lala)
+    {
+        return $this;
+    }
 }
