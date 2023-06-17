@@ -10,9 +10,10 @@ $_routes = [
     '/logout_action' => 'login.logout_action',
 
     // navigation
-    '/tentang' => 'dashboard.tentang',
+    '/tentang'          => 'dashboard.tentang',
     '/syarat-ketentuan' => 'dashboard.snk',
-    '/faq' => 'dashboard.faq',
+    '/faq'              => 'dashboard.faq',
+    '/ajax_chart'       => 'dashboard.ajax_chart',
 
     // authenticated user menu
     '/iuran'               => 'iuran.index',

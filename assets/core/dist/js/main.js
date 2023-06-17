@@ -14,9 +14,7 @@ Chart.defaults.plugins.tooltip.mode = 'index';
 Chart.defaults.plugins.tooltip.position = 'nearest';
 Chart.defaults.plugins.tooltip.external = coreui.ChartJS.customTooltips;
 Chart.defaults.defaultFontColor = '#646470';
-const random = (min, max) =>
-// eslint-disable-next-line no-mixed-operators
-Math.floor(Math.random() * (max - min + 1) + min);
+const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 // eslint-disable-next-line no-unused-vars
 // const cardChart1 = new Chart(document.getElementById('card-chart1'), {
@@ -216,66 +214,5 @@ Math.floor(Math.random() * (max - min + 1) + min);
 // });
 
 // eslint-disable-next-line no-unused-vars
-const mainChart = new Chart(document.getElementById('main-chart'), {
-  type: 'line',
-  data: {
-    labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli'],
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: coreui.Utils.hexToRgba(coreui.Utils.getStyle('--cui-info'), 10),
-      borderColor: coreui.Utils.getStyle('--cui-info'),
-      pointHoverBackgroundColor: '#fff',
-      borderWidth: 2,
-      data: [random(200000, 5000000), random(200000, 5000000), random(200000, 5000000), random(200000, 5000000), random(200000, 5000000), random(200000, 5000000), random(200000, 5000000)],
-      fill: true
-    }, {
-      label: 'My Second dataset',
-      borderColor: coreui.Utils.getStyle('--cui-success'),
-      pointHoverBackgroundColor: '#fff',
-      borderWidth: 2,
-      data: [random(200000, 5000000), random(200000, 5000000), random(200000, 5000000), random(200000, 5000000), random(200000, 5000000), random(200000, 5000000), random(200000, 5000000)]
-    }, {
-      label: 'My Third dataset',
-      borderColor: coreui.Utils.getStyle('--cui-danger'),
-      pointHoverBackgroundColor: '#fff',
-      borderWidth: 1,
-      borderDash: [8, 5],
-      data: [65, 65, 65, 65, 65, 65, 65]
-    }]
-  },
-  options: {
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        display: false
-      }
-    },
-    scales: {
-      x: {
-        grid: {
-          drawOnChartArea: false
-        }
-      },
-      y: {
-        ticks: {
-          beginAtZero: true,
-          maxTicksLimit: 5,
-          stepSize: Math.ceil(250 / 5),
-          max: 250
-        }
-      }
-    },
-    elements: {
-      line: {
-        tension: 0.4
-      },
-      point: {
-        radius: 0,
-        hitRadius: 10,
-        hoverRadius: 4,
-        hoverBorderWidth: 3
-      }
-    }
-  }
-});
+
 //# sourceMappingURL=main.js.map
